@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        
+        <script src="form_check.js"></script>
         <title>JavaScript</title>
     </head>
     <body>
@@ -48,10 +48,9 @@
                     <td><textarea rows="5" cols="15" name="uwagi"></textarea></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="submit" value="Prześlij"></td>
+                    <td colspan="2"><input type="submit" value="Prześlij" onclick="return validate(this.form);"></td>
                 </tr>
             </table>
         </form>
     </body>
-<script src="form_check.js"></script>
 </html>

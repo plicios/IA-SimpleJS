@@ -7,30 +7,39 @@ function isEmpty(text) {
     }
 }
 
+function isWhiteSpace(str) {
+    var ws = "\t\n\r ";
+    for (var i = 0; i < str.length; i++) {
+        var c = str.charAt(i);
+        if (ws.indexOf(c) == -1) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function checkString(text, message) {
+    if (isEmpty(text) || isWhiteSpace(text)) {
+        alert(message);
+        return false;
+    }
+    return true
+}
+
 function validate(form) {
-    var is_name_empty = isEmpty(form.elements["f_imie"].value);
-    console.log("f_imie");
-    console.log(is_name_empty);
-
+    var stringsGood = true;
+    var imie = form.elements["f_imie"].value;
+    stringsGood = stringsGood && checkString(imie, "Podaj imie!")
+    var nazwisko = form.elements["f_nazwisko"].value;
+    stringsGood = stringsGood && checkString(nazwisko, "Podaj nazwisko!")
+    var kod = form.elements["f_kod"].value;
+    stringsGood = stringsGood && checkString(kod, "Podaj kod pocztowy!")
+    var ulica = form.elements["f_ulica"].value;
+    stringsGood = stringsGood && checkString(ulica, "Podaj ulice!")
+    var miasto = form.elements["f_miasto"].value;
+    stringsGood = stringsGood && checkString(miasto, "Podaj miasto!")
+    return stringsGood;
 }
-
-function my_function(){
-    var form1 = document.getElementById("data_form");
-    validate(form1);
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function demo() {
-    //console.log('Taking a break...');
-    //await sleep(1);
-    //console.log('Two second later');
-    window.onload = my_function();
-}
-
-demo();
 
 
 
