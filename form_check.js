@@ -24,9 +24,9 @@ function sleep(ms) {
 }
 
 async function demo() {
-    console.log('Taking a break...');
-    await sleep(2000);
-    console.log('Two second later');
+    //console.log('Taking a break...');
+    //await sleep(1);
+    //console.log('Two second later');
     window.onload = my_function();
 }
 
