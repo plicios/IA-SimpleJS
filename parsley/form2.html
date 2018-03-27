@@ -1,0 +1,53 @@
+﻿<!doctype html> 
+<html> 
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript</title>
+		<link href="parsley.css">
+		<script src="parsley.min.js"></script>
+        <script src="pl.js"></script>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        <h2>Form validation</h2>
+        <form id="form" name="dane_osobowe" data-parsley-validate>
+            <table>
+                <tr>
+                    <td>
+                        <label>Imię</label>
+                    </td>
+                    <td>
+                        <input type="text" name="f_imie" required="" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>E-mail</label>
+                    </td>
+                    <td>
+                        <input type="email" name="f_email" required="" data-parsley-trigger="change">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Kod pocztowy</label>
+                    </td>
+                    <td>
+                        <input type="text" name="f_kod" required="" data-parsley-type="digits" data-parsley-trigger="change" data-parsley-zip="pl">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Miasto</label>
+                    </td>
+                    <td>
+                        <input type="text" name="f_miasto" required="" >
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Prześlij" class="btn btn-success"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
