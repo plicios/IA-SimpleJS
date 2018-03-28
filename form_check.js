@@ -76,11 +76,17 @@ function validate(form) {
         stringsGood = false;
         imieInput.className = "wrong";
     }
+    else {
+        imieInput.className = "";
+    }
 
     var nazwiskoInput = form.elements["f_nazwisko"];
     if (!checkStringAndFocus(nazwiskoInput, "Podaj nazwisko!")) {
         stringsGood = false;
         nazwiskoInput.className = "wrong";
+    }
+    else {
+        nazwiskoInput.className = "";
     }
 
     var kodInput = form.elements["f_kod"];
@@ -88,11 +94,17 @@ function validate(form) {
         stringsGood = false;
         kodInput.className = "wrong";
     }
+    else {
+        kodInput.className = "";
+    }
 
     var ulicaInput = form.elements["f_ulica"];
     if (!checkStringAndFocus(ulicaInput, "Podaj ulicę!")) {
         stringsGood = false;
         ulicaInput.className = "wrong";
+    }
+    else {
+        ulicaInput.className = "";
     }
 
     var miastoInput = form.elements["f_miasto"];
@@ -100,11 +112,17 @@ function validate(form) {
         stringsGood = false;
         miastoInput.className = "wrong";
     }
+    else {
+        miastoInput.className = "";
+    }
 
     var email = form.elements["f_email"];
     if (!checkEmailRegEx(email)) {
         stringsGood = false;
         email.className = "wrong";
+    }
+    else {
+        email.className = "";
     }
     
     return stringsGood;
